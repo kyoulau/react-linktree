@@ -1,10 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import Input from "../../components/Input";
 import { useState, type FormEvent } from "react";
-import { auth, db } from "../../services/firebaseConnection";
+import { auth } from "../../services/firebaseConnection";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { Header } from "../../components/header";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -22,7 +21,6 @@ function Login() {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
         console.log("deu cerrto");
         navigate("/admin", { replace: true });
       })
