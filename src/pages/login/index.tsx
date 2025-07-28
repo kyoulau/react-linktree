@@ -20,7 +20,7 @@ function Login() {
     }
 
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then(() => {
         console.log("deu cerrto");
         navigate("/admin", { replace: true });
       })
